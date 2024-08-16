@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/AkibHossainOmi.github.io/static/css/main.3adf1ae4.css",
-    "main.js": "/AkibHossainOmi.github.io/static/js/main.f7de060d.js",
+    "main.css": "/AkibHossainOmi.github.io/static/css/main.605c9457.css",
+    "main.js": "/AkibHossainOmi.github.io/static/js/main.001b50d0.js",
     "static/js/415.6ae20f68.chunk.js": "/AkibHossainOmi.github.io/static/js/415.6ae20f68.chunk.js",
     "static/js/787.dd8e76af.chunk.js": "/AkibHossainOmi.github.io/static/js/787.dd8e76af.chunk.js",
     "static/media/health.jpg": "/AkibHossainOmi.github.io/static/media/health.5c3ae0f2887088ee9530.jpg",
-    "static/media/home-main.svg": "/AkibHossainOmi.github.io/static/media/home-main.541f8179af8209ce03ccf2178fe62dbf.svg",
+    "static/media/home-main.svg": "/AkibHossainOmi.github.io/static/media/home-main.359935c39288e92d4dba5c9f2445b91d.svg",
     "static/media/about.png": "/AkibHossainOmi.github.io/static/media/about.aee0f771fbfc1e7b8fa8.png",
     "static/media/ResultSync.jpeg": "/AkibHossainOmi.github.io/static/media/ResultSync.1d346a225e3e3175dc32.jpeg",
     "static/media/EcoSync.jpg": "/AkibHossainOmi.github.io/static/media/EcoSync.66072adce8025fbcd5a4.jpg",
     "static/media/logo.png": "/AkibHossainOmi.github.io/static/media/logo.343e12e4edc5dd2a7301.png",
     "static/media/AkibHossainOmi.pdf": "/AkibHossainOmi.github.io/static/media/AkibHossainOmi.3acd15cd485f7b93ec2d.pdf",
     "static/media/home-bg.jpg": "/AkibHossainOmi.github.io/static/media/home-bg.dc52d5d40a40b13154b0.jpg",
-    "static/media/pre.svg": "/AkibHossainOmi.github.io/static/media/pre.d4812f51c8c80976eaab.svg",
+    "static/media/pre.svg": "/AkibHossainOmi.github.io/static/media/pre.4410c5baaa673cc131da.svg",
     "index.html": "/AkibHossainOmi.github.io/index.html",
-    "main.3adf1ae4.css.map": "/AkibHossainOmi.github.io/static/css/main.3adf1ae4.css.map",
-    "main.f7de060d.js.map": "/AkibHossainOmi.github.io/static/js/main.f7de060d.js.map",
+    "main.605c9457.css.map": "/AkibHossainOmi.github.io/static/css/main.605c9457.css.map",
+    "main.001b50d0.js.map": "/AkibHossainOmi.github.io/static/js/main.001b50d0.js.map",
     "415.6ae20f68.chunk.js.map": "/AkibHossainOmi.github.io/static/js/415.6ae20f68.chunk.js.map",
     "787.dd8e76af.chunk.js.map": "/AkibHossainOmi.github.io/static/js/787.dd8e76af.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3adf1ae4.css",
-    "static/js/main.f7de060d.js"
+    "static/css/main.605c9457.css",
+    "static/js/main.001b50d0.js"
   ]
 }
