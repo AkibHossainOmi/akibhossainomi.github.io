@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/static/css/main.18c476ba.css",
-    "main.js": "/static/js/main.aeb66850.js",
-    "static/js/415.4d6acbeb.chunk.js": "/static/js/415.4d6acbeb.chunk.js",
-    "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
-    "static/media/health.jpg": "/static/media/health.5c3ae0f2887088ee9530.jpg",
-    "static/media/home-main.svg": "/static/media/home-main.541f8179af8209ce03ccf2178fe62dbf.svg",
-    "static/media/about.png": "/static/media/about.aee0f771fbfc1e7b8fa8.png",
-    "static/media/ResultSync.jpeg": "/static/media/ResultSync.1d346a225e3e3175dc32.jpeg",
-    "static/media/EcoSync.jpg": "/static/media/EcoSync.66072adce8025fbcd5a4.jpg",
-    "static/media/logo.png": "/static/media/logo.343e12e4edc5dd2a7301.png",
-    "static/media/AkibHossainOmi.pdf": "/static/media/AkibHossainOmi.3acd15cd485f7b93ec2d.pdf",
-    "static/media/home-bg.jpg": "/static/media/home-bg.dc52d5d40a40b13154b0.jpg",
-    "static/media/pre.svg": "/static/media/pre.d4812f51c8c80976eaab.svg",
-    "index.html": "/index.html",
-    "main.18c476ba.css.map": "/static/css/main.18c476ba.css.map",
-    "main.aeb66850.js.map": "/static/js/main.aeb66850.js.map",
-    "415.4d6acbeb.chunk.js.map": "/static/js/415.4d6acbeb.chunk.js.map",
-    "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
+    "main.css": "/AkibHossainOmi.github.io/static/css/main.3adf1ae4.css",
+    "main.js": "/AkibHossainOmi.github.io/static/js/main.ab19c5ae.js",
+    "static/js/415.4d6acbeb.chunk.js": "/AkibHossainOmi.github.io/static/js/415.4d6acbeb.chunk.js",
+    "static/js/787.1ed0c42c.chunk.js": "/AkibHossainOmi.github.io/static/js/787.1ed0c42c.chunk.js",
+    "static/media/health.jpg": "/AkibHossainOmi.github.io/static/media/health.5c3ae0f2887088ee9530.jpg",
+    "static/media/home-main.svg": "/AkibHossainOmi.github.io/static/media/home-main.541f8179af8209ce03ccf2178fe62dbf.svg",
+    "static/media/about.png": "/AkibHossainOmi.github.io/static/media/about.aee0f771fbfc1e7b8fa8.png",
+    "static/media/ResultSync.jpeg": "/AkibHossainOmi.github.io/static/media/ResultSync.1d346a225e3e3175dc32.jpeg",
+    "static/media/EcoSync.jpg": "/AkibHossainOmi.github.io/static/media/EcoSync.66072adce8025fbcd5a4.jpg",
+    "static/media/logo.png": "/AkibHossainOmi.github.io/static/media/logo.343e12e4edc5dd2a7301.png",
+    "static/media/AkibHossainOmi.pdf": "/AkibHossainOmi.github.io/static/media/AkibHossainOmi.3acd15cd485f7b93ec2d.pdf",
+    "static/media/home-bg.jpg": "/AkibHossainOmi.github.io/static/media/home-bg.dc52d5d40a40b13154b0.jpg",
+    "static/media/pre.svg": "/AkibHossainOmi.github.io/static/media/pre.d4812f51c8c80976eaab.svg",
+    "index.html": "/AkibHossainOmi.github.io/index.html",
+    "main.3adf1ae4.css.map": "/AkibHossainOmi.github.io/static/css/main.3adf1ae4.css.map",
+    "main.ab19c5ae.js.map": "/AkibHossainOmi.github.io/static/js/main.ab19c5ae.js.map",
+    "415.4d6acbeb.chunk.js.map": "/AkibHossainOmi.github.io/static/js/415.4d6acbeb.chunk.js.map",
+    "787.1ed0c42c.chunk.js.map": "/AkibHossainOmi.github.io/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.18c476ba.css",
-    "static/js/main.aeb66850.js"
+    "static/css/main.3adf1ae4.css",
+    "static/js/main.ab19c5ae.js"
   ]
 }
