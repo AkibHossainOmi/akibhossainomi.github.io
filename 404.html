@@ -4,12 +4,14 @@
     <meta charset="UTF-8" />
     <title>Page Not Found</title>
     <script type="text/javascript">
-      // Preserve the path and redirect to index.html
-      var redirectTo = window.location.pathname;
-      if (!redirectTo.startsWith("/")) {
-        redirectTo = "/" + redirectTo;
-      }
-      window.location.replace("/#" + redirectTo);
+      // Redirect to index.html and preserve the full path
+      var pathname = window.location.pathname;
+      var search = window.location.search;
+      var hash = window.location.hash;
+      var redirectTo = pathname + search + hash;
+
+      // Redirect to index.html with the preserved path
+      window.location.replace("/index.html?redirect=" + encodeURIComponent(redirectTo));
     </script>
   </head>
   <body></body>
