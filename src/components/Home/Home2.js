@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-// import myImg from "../../Assets/avatar.svg";
-// import Tilt from "react-parallax-tilt";
+import myImg from "../../Assets/avataaars.svg";
+import Tilt from "react-parallax-tilt";
 // import {
 //   AiFillGithub,
 //   AiOutlineTwitter,
@@ -57,11 +57,11 @@ function Home2() {
               </i>
             </p>
           </Col>
-          {/* <Col md={4} className="myAvtar">
+          <Col md={4} className="myAvtar">
             <Tilt>
-              <img src={myImg} className="img-fluid" alt="avatar" />
+              <img src={myImg} style={{ width: '55%', height: 'auto' }}  className="img-fluid" alt="avatar" />
             </Tilt>
-          </Col> */}
+          </Col>
         </Row>
         {/* <Row>
           <Col md={12} className="home-about-social">
