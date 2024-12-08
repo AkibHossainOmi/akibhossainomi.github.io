@@ -6,6 +6,7 @@ import health from "../../Assets/Projects/health.jpg";
 // import emotion from "../../Assets/Projects/emotion.png";
 import Ecosync from "../../Assets/Projects/EcoSync.jpg";
 import ResultSync from "../../Assets/Projects/ResultSync.jpeg";
+import FontForger from "../../Assets/Projects/FontForger.png";
 // import suicide from "../../Assets/Projects/suicide.png";
 // import bitsOfCode from "../../Assets/Projects/blog.png";
 
@@ -21,6 +22,17 @@ function Projects() {
           Here are a few projects I've worked on recently.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+        <Col md={4} className="project-card">
+          <ProjectCard
+            imgPath={FontForger}
+            isBlog={false}
+            title="FontForger"
+            description="FontForger is a Chrome extension that allows users to quickly convert selected text to uppercase or lowercase using intuitive keyboard shortcuts. Built with JavaScript, it works across all editable text fields in the browser, enhancing productivity."
+            ghLink="https://github.com/AkibHossainOmi/FontForger"
+            // demoLink="https://blogs.soumya-jit.tech/"
+          />
+        </Col>
+
         <Col md={4} className="project-card">
           <ProjectCard
             imgPath={ResultSync}
