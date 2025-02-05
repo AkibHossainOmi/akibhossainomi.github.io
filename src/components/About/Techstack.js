@@ -2,7 +2,7 @@ import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { CgCPlusPlus } from "react-icons/cg";
 import { DiJavascript1, DiReact, DiNodejs, DiPython, DiJava } from "react-icons/di";
-import { SiCsharp, SiTailwindcss, SiMysql, SiPostgresql, SiC, SiExpress, SiHtml5 } from "react-icons/si";
+import { SiCsharp, SiTailwindcss, SiMysql, SiPostgresql, SiC, SiExpress, SiHtml5, SiFirebase, SiRedis } from "react-icons/si";
 
 function Techstack() {
   return (
@@ -45,6 +45,12 @@ function Techstack() {
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <SiPostgresql />
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <SiFirebase />
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <SiRedis />
       </Col>
     </Row>
   );
