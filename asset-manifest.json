@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/static/css/main.29bc8131.css",
-    "main.js": "/static/js/main.617be5ce.js",
+    "main.js": "/static/js/main.6a0e2974.js",
     "static/js/415.6ae20f68.chunk.js": "/static/js/415.6ae20f68.chunk.js",
     "static/js/787.dd8e76af.chunk.js": "/static/js/787.dd8e76af.chunk.js",
     "static/media/FontForger.png": "/static/media/FontForger.a7b3e2a3d463565c156b.png",
-    "static/media/AkibHossainOmi.pdf": "/static/media/AkibHossainOmi.30e9d9e2857e3c931321.pdf",
+    "static/media/AkibHossainOmi.pdf": "/static/media/AkibHossainOmi.b18af7f09c2dee3aafd9.pdf",
     "static/media/health.jpg": "/static/media/health.f6c02762cfca0c0dbe9a.jpg",
     "static/media/home-main.svg": "/static/media/home-main.359935c39288e92d4dba5c9f2445b91d.svg",
     "static/media/about.png": "/static/media/about.aee0f771fbfc1e7b8fa8.png",
@@ -18,12 +18,12 @@
     "static/media/pre.svg": "/static/media/pre.4410c5baaa673cc131da.svg",
     "index.html": "/index.html",
     "main.29bc8131.css.map": "/static/css/main.29bc8131.css.map",
-    "main.617be5ce.js.map": "/static/js/main.617be5ce.js.map",
+    "main.6a0e2974.js.map": "/static/js/main.6a0e2974.js.map",
     "415.6ae20f68.chunk.js.map": "/static/js/415.6ae20f68.chunk.js.map",
     "787.dd8e76af.chunk.js.map": "/static/js/787.dd8e76af.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.29bc8131.css",
-    "static/js/main.617be5ce.js"
+    "static/js/main.6a0e2974.js"
   ]
 }
