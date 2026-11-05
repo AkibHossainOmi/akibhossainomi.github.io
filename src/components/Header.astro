@@ -7,12 +7,12 @@ const isActive = (href: string) => (href === "/" ? path === "/" : path.startsWit
 
 <header class="sticky top-0 z-40 border-b border-line bg-paper/90 backdrop-blur-sm supports-[backdrop-filter]:bg-paper/75">
   <div class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
-    <a href="/" class="group flex items-center gap-2.5" title={`${site.name}, home`}>
-      <svg class="orbit size-7 shrink-0" viewBox="0 0 64 64" aria-hidden="true">
+    <a href="/" class="group -m-1.5 flex items-center rounded p-1.5" title={`${site.name}, home`}>
+      <svg class="orbit size-8 shrink-0" viewBox="0 0 64 64" aria-hidden="true">
         <circle cx="32" cy="32" r="17" fill="none" stroke="currentColor" stroke-width="9" />
         <g class="orbit-moon"><circle cx="32" cy="4.5" r="4.2" class="fill-accent" /></g>
       </svg>
-      <span class="whitespace-nowrap font-semibold tracking-[-0.03em] text-[1.05rem] leading-none min-[360px]:text-[1.2rem]">Akib Hossain Omi</span>
+      <span class="sr-only">{site.name}</span>
     </a>
 
     <div class="flex items-center gap-1 sm:gap-2">
