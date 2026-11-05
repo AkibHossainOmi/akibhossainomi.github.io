@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from "astro/config";
+import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
@@ -11,5 +12,10 @@ export default defineConfig({
   redirects: {
     "/project": "/projects", // old route name from the previous site
   },
+  integrations: [
+    sitemap({
+      filter: (page) => !/\/(404|project)$/.test(page),
+    }),
+  ],
   vite: { plugins: [tailwindcss()] },
 });
