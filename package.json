@@ -15,16 +15,22 @@
     "deploy": "gh-pages -d dist -t"
   },
   "dependencies": {
+    "@astrojs/react": "^7.0.1",
     "@astrojs/sitemap": "^3.7.4",
     "@fontsource-variable/ibm-plex-sans": "^5.3.0",
     "@fontsource/ibm-plex-mono": "^5.3.0",
     "@fontsource/instrument-serif": "^5.3.0",
     "@tailwindcss/vite": "^4.3.4",
     "astro": "^7.3.8",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-github-calendar": "^5.0.9",
     "tailwindcss": "^4.3.4"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.12",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
     "gh-pages": "^6.3.0",
     "typescript": "^6.0.3"
   }
