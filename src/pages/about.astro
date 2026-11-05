@@ -2,6 +2,7 @@
 import Base from "../layouts/Base.astro";
 import Section from "../components/Section.astro";
 import Experience from "../components/Experience.astro";
+import ContributionCalendar from "../components/ContributionCalendar";
 import { site } from "../data/site";
 import { skills, education, achievements, openSource } from "../data/profile";
 
@@ -89,6 +90,12 @@ const schema = [
           <p class="text-ink-2">{education.degree}, {education.school} ({education.period}, {education.note})</p>
         </li>
       </ul>
+    </div>
+  </Section>
+
+  <Section id="activity" label="04" title="On GitHub" class="mt-20">
+    <div class="min-h-[150px] overflow-x-auto pb-2 text-ink-2">
+      <ContributionCalendar client:visible username="AkibHossainOmi" />
     </div>
   </Section>
 </Base>
