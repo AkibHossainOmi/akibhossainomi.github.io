@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from "astro/config";
+import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 
@@ -13,6 +14,7 @@ export default defineConfig({
     "/project": "/projects", // old route name from the previous site
   },
   integrations: [
+    react(),
     sitemap({
       filter: (page) => !/\/(404|project)$/.test(page),
     }),
