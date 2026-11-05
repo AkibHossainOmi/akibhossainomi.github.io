@@ -1,9 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <style>
-    .t { fill: #1d1b18 } .o { stroke: #f5f1ea } .d { fill: #e0743a }
-    @media (prefers-color-scheme: dark) { .t { fill: #f5f1ea } .o { stroke: #1d1b18 } .d { fill: #b8430f } }
+    .t { fill: #1d1b18 } .o { stroke: #f5f1ea }
+    @media (prefers-color-scheme: dark) { .t { fill: #f5f1ea } .o { stroke: #1d1b18 } }
   </style>
   <rect class="t" width="64" height="64" rx="14"/>
-  <circle class="o" cx="32" cy="34" r="13.6" fill="none" stroke-width="7.2"/>
-  <circle class="d" cx="32" cy="11.6" r="3.4"/>
+  <circle class="o" cx="32" cy="32" r="15" fill="none" stroke-width="8"/>
 </svg>
