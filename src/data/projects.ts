@@ -23,6 +23,9 @@ export type Project = {
   role?: string;
   context?: string;
   featured?: boolean;
+  /** schema.org type used in structured data. */
+  schemaType: "SoftwareApplication" | "WebApplication" | "SoftwareSourceCode";
+  category?: string;
 };
 
 export const projects: Project[] = [
@@ -38,6 +41,8 @@ export const projects: Project[] = [
     live: "https://quicksell.intechsolution.bd",
     role: "Co-founder, Intech Solution",
     featured: true,
+    schemaType: "WebApplication",
+    category: "BusinessApplication",
   },
   {
     slug: "distressed-pro-data",
@@ -50,6 +55,8 @@ export const projects: Project[] = [
     tags: ["Interactive US map", "Lead marketplace", "Usage-based billing", "Monthly data refresh"],
     live: "https://distressedprodata.com",
     featured: true,
+    schemaType: "WebApplication",
+    category: "BusinessApplication",
   },
   {
     slug: "resultsync",
@@ -61,6 +68,7 @@ export const projects: Project[] = [
     imageAlt: "ResultSync dashboard screenshot",
     tags: ["React", "Node.js", "Express", "MySQL", "Tailwind CSS"],
     source: "https://github.com/AkibHossainOmi/ResultSync",
+    schemaType: "SoftwareSourceCode",
   },
   {
     slug: "ecosync",
@@ -73,6 +81,7 @@ export const projects: Project[] = [
     tags: ["React", "Express", "MySQL", "Tailwind CSS", "Route optimisation"],
     source: "https://github.com/AkibHossainOmi/cs24-p2-DIIT_RUNTIME_TERROR",
     context: "Code Samurai 2024",
+    schemaType: "SoftwareSourceCode",
   },
   {
     slug: "health",
@@ -84,6 +93,7 @@ export const projects: Project[] = [
     imageAlt: "Health app screenshot",
     tags: ["Open source", "Web app", "Healthcare"],
     source: "https://github.com/Balagha/health",
+    schemaType: "SoftwareSourceCode",
   },
   {
     slug: "familycart",
@@ -95,6 +105,7 @@ export const projects: Project[] = [
     imageAlt: "FamilyCart Android app screens",
     tags: ["Android", "Mobile app", "Expense tracking"],
     source: "https://github.com/AkibHossainOmi/familycart",
+    schemaType: "SoftwareSourceCode",
   },
   {
     slug: "fontforger",
@@ -106,6 +117,7 @@ export const projects: Project[] = [
     imageAlt: "FontForger Chrome extension screenshot",
     tags: ["JavaScript", "Chrome extension"],
     source: "https://github.com/AkibHossainOmi/FontForger",
+    schemaType: "SoftwareSourceCode",
   },
 ];
 
