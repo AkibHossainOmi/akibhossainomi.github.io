@@ -1,0 +1,204 @@
+---
+// Hero toy: the letters of my name as bars, shuffled and sorted again by a
+// different algorithm each round. Decorative; the real name is the <h1>.
+const letters = "AKIBHOSSAINOMI".split("");
+const n = letters.length;
+const algos = [
+  { id: "quick", label: "Quick" },
+  { id: "insertion", label: "Insertion" },
+  { id: "selection", label: "Selection" },
+  { id: "bubble", label: "Bubble" },
+];
+---
+
+<figure class="name-sort" data-n={n}>
+  <div class="rounded-lg border border-line bg-paper-2 p-4 sm:p-5">
+    <div class="ns-stage relative h-[170px] sm:h-[210px]" aria-hidden="true">
+      {letters.map((ch, v) => (
+        <div class="ns-tile" data-v={v} style={`--i:${v}`}>
+          <div class="ns-bar" style={`height:${16 + v * (100 - 16) / (n - 1)}%`}></div>
+          <span class="ns-ch">{ch}</span>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-line pt-3">
+      <div class="flex flex-wrap gap-1" role="group" aria-label="Sorting algorithm">
+        {algos.map((a, i) => (
+          <button type="button" class="ns-algo" data-algo={a.id} aria-pressed={i === 0 ? "true" : "false"}>{a.label}</button>
+        ))}
+      </div>
+      <p class="ns-stats w-full font-mono text-[0.75rem] text-muted">Sorted.</p>
+    </div>
+  </div>
+  <figcaption class="mt-3 text-[0.82rem] text-muted">
+    I learned to program through contests, so here's my name, shuffled and sorted again, a different algorithm each time. Pick one to run it yourself.
+  </figcaption>
+</figure>
+
+<style>
+  .ns-stage { --gap: 4px; }
+  .ns-tile {
+    position: absolute; top: 0; bottom: 1.7rem;
+    width: calc((100% - (var(--n, 14) - 1) * var(--gap)) / var(--n, 14));
+    left: 0;
+    /* Move with transform, not left, so the animation never counts as layout shift. */
+    transform: translateX(calc(var(--i) * (100% + var(--gap))));
+    display: flex; flex-direction: column; justify-content: flex-end; align-items: center;
+    transition: transform 0.22s ease;
+  }
+  .ns-bar { width: 100%; border-radius: 3px 3px 1px 1px; background: var(--ink); transition: background-color 0.15s; }
+  .ns-ch { position: absolute; bottom: -1.5rem; font-weight: 600; font-size: 0.85rem; color: var(--ink); transition: color 0.15s; }
+  .name-sort.is-running .ns-bar { background: color-mix(in srgb, var(--ink) 18%, transparent); }
+  .name-sort.is-running .ns-ch { color: var(--ink-2); }
+  .ns-tile.cmp .ns-bar { background: var(--accent) !important; }
+  .ns-tile.cmp .ns-ch { color: var(--accent) !important; }
+  .ns-tile.pivot .ns-bar { background: color-mix(in srgb, var(--accent) 40%, transparent) !important; }
+  .ns-algo {
+    font-size: 0.8rem; font-weight: 500; line-height: 1.5;
+    padding: 0.15rem 0.7rem; border-radius: 999px;
+    border: 1px solid var(--line); background: var(--paper); color: var(--ink-2);
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+  }
+  .ns-algo:hover { border-color: var(--muted); color: var(--ink); }
+  .ns-algo[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+  @media (prefers-reduced-motion: reduce) { .ns-tile { transition: none; } }
+</style>
+
+<script>
+  type Step = ["cmp" | "swap", number, number] | ["pivot", number];
+  const sorters: Record<string, (a: number[]) => Step[]> = {
+    quick(a) {
+      const s: Step[] = []; a = a.slice();
+      const qs = (lo: number, hi: number) => {
+        if (lo >= hi) return;
+        s.push(["pivot", hi]);
+        let p = lo;
+        for (let i = lo; i < hi; i++) {
+          s.push(["cmp", i, hi]);
+          if (a[i] < a[hi]) { if (i !== p) { [a[i], a[p]] = [a[p], a[i]]; s.push(["swap", i, p]); } p++; }
+        }
+        if (p !== hi) { [a[p], a[hi]] = [a[hi], a[p]]; s.push(["swap", p, hi]); }
+        qs(lo, p - 1); qs(p + 1, hi);
+      };
+      qs(0, a.length - 1);
+      return s;
+    },
+    insertion(a) {
+      const s: Step[] = []; a = a.slice();
+      for (let i = 1; i < a.length; i++)
+        for (let j = i; j > 0; j--) {
+          s.push(["cmp", j - 1, j]);
+          if (a[j - 1] > a[j]) { [a[j - 1], a[j]] = [a[j], a[j - 1]]; s.push(["swap", j - 1, j]); } else break;
+        }
+      return s;
+    },
+    selection(a) {
+      const s: Step[] = []; a = a.slice();
+      for (let i = 0; i < a.length - 1; i++) {
+        let m = i;
+        s.push(["pivot", i]);
+        for (let j = i + 1; j < a.length; j++) { s.push(["cmp", m, j]); if (a[j] < a[m]) m = j; }
+        if (m !== i) { [a[i], a[m]] = [a[m], a[i]]; s.push(["swap", i, m]); }
+      }
+      return s;
+    },
+    bubble(a) {
+      const s: Step[] = []; a = a.slice();
+      for (let i = 0; i < a.length; i++) {
+        let swapped = false;
+        for (let j = 0; j < a.length - 1 - i; j++) {
+          s.push(["cmp", j, j + 1]);
+          if (a[j] > a[j + 1]) { [a[j], a[j + 1]] = [a[j + 1], a[j]]; s.push(["swap", j, j + 1]); swapped = true; }
+        }
+        if (!swapped) break;
+      }
+      return s;
+    },
+  };
+  const names: Record<string, string> = { quick: "Quick sort", insertion: "Insertion sort", selection: "Selection sort", bubble: "Bubble sort" };
+  const cycle = Object.keys(sorters);
+  const RUN_MS = 3200;   // every algorithm takes about this long, however many steps it needs
+  const HOLD_MS = 4000;  // how long the sorted name stays before the next round
+
+  for (const fig of document.querySelectorAll<HTMLElement>(".name-sort")) {
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const stage = fig.querySelector<HTMLElement>(".ns-stage")!;
+    const stats = fig.querySelector<HTMLElement>(".ns-stats")!;
+    const buttons = [...fig.querySelectorAll<HTMLButtonElement>(".ns-algo")];
+    const tiles = [...stage.querySelectorAll<HTMLElement>(".ns-tile")];
+    stage.style.setProperty("--n", String(tiles.length));
+
+    let order = tiles.slice();          // order[i] = tile currently at position i
+    const value = (t: HTMLElement) => Number(t.dataset.v);
+    let algoIndex = 0;
+    let run = 0;                          // bumps on every new round; old loops see it and stop
+    let timer = 0;
+    let visible = true;
+
+    const place = () => order.forEach((t, i) => t.style.setProperty("--i", String(i)));
+    const clearMarks = () => tiles.forEach((t) => t.classList.remove("cmp", "pivot"));
+    const wait = (ms: number) => new Promise((r) => setTimeout(r, ms));
+    const select = (i: number) => buttons.forEach((b, j) => b.setAttribute("aria-pressed", String(i === j)));
+
+    function shuffle() {
+      do {
+        for (let i = order.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [order[i], order[j]] = [order[j], order[i]];
+        }
+      } while (order.every((t, i) => value(t) === i));
+      place();
+    }
+
+    async function round(i: number) {
+      const id = ++run;
+      clearTimeout(timer);
+      algoIndex = i;
+      select(i);
+      const algo = cycle[i];
+      clearMarks();
+      fig.classList.add("is-running");
+      shuffle();
+      stats.textContent = `${names[algo]}…`;
+      if (!reduce) await wait(450);
+
+      const steps = sorters[algo](order.map(value));
+      const delay = reduce ? 0 : Math.max(12, Math.min(80, RUN_MS / steps.length));
+      let cmps = 0, swaps = 0;
+      for (const step of steps) {
+        if (id !== run) return;
+        if (step[0] === "pivot") { tiles.forEach((t) => t.classList.remove("pivot")); order[step[1]].classList.add("pivot"); continue; }
+        const [op, a, b] = step;
+        if (!reduce) { tiles.forEach((t) => t.classList.remove("cmp")); order[a].classList.add("cmp"); order[b].classList.add("cmp"); }
+        if (op === "cmp") cmps++;
+        else { swaps++; [order[a], order[b]] = [order[b], order[a]]; if (!reduce) place(); }
+        if (delay) {
+          stats.textContent = `${names[algo]} · ${cmps} comparisons · ${swaps} swaps`;
+          await wait(delay);
+        }
+      }
+      if (id !== run) return;
+      place();
+      clearMarks();
+      fig.classList.remove("is-running");
+      stats.textContent = `${names[algo]} · ${cmps} comparisons · ${swaps} swaps · sorted`;
+      schedule();
+    }
+
+    // Queue the next algorithm, but only while the hero is on screen and the tab is visible.
+    function schedule() {
+      clearTimeout(timer);
+      if (reduce) return;
+      timer = window.setTimeout(() => {
+        if (visible && !document.hidden) round((algoIndex + 1) % cycle.length);
+        else schedule();
+      }, HOLD_MS);
+    }
+
+    buttons.forEach((b, i) => b.addEventListener("click", () => round(i)));
+    new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe(fig);
+
+    if (!reduce) timer = window.setTimeout(() => round(0), 900);
+  }
+</script>
