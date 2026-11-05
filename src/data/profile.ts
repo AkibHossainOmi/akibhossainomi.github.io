@@ -1,4 +1,4 @@
-// Career data shared by the About and Résumé pages and the structured data.
+// Career data shared by the About and Resume pages and the structured data.
 
 export const experience = [
   {

@@ -20,7 +20,7 @@ export const site = {
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
     { label: "Projects", href: "/projects" },
-    { label: "Résumé", href: "/resume" },
+    { label: "Resume", href: "/resume" },
   ],
 } as const;
 

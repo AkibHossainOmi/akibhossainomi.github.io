@@ -22,7 +22,7 @@ npm run preview    # serve dist/ locally
 | Name, links, email, nav | `src/data/site.ts` |
 | Projects (featured / earlier) | `src/data/projects.ts` |
 | Experience, skills, awards | `src/data/profile.ts` |
-| Résumé PDF | `public/AkibHossainOmi.pdf` |
+| Resume PDF | `public/AkibHossainOmi.pdf` |
 | AI-readable summary | `public/llms.txt` |
 
 `npm run screenshots` refreshes the live-site previews of featured projects (needs a local Chrome or Edge).
