@@ -47,7 +47,7 @@ const flip = index % 2 === 1;
       <span class="text-accent">{String(index + 1).padStart(2, "0")}</span>
       {p.role && <span> · {p.role}</span>}
     </p>
-    <Heading class="mt-2 font-serif text-4xl leading-none sm:text-5xl">{p.title}</Heading>
+    <Heading class="mt-2 font-semibold tracking-[-0.035em] text-3xl leading-none sm:text-4xl">{p.title}</Heading>
     <p class="mt-3 text-lg text-ink">{p.summary}</p>
     <p class="mt-3 text-ink-2">{p.description}</p>
     <ul class="mt-5 flex flex-wrap gap-x-4 gap-y-1 font-mono text-[0.75rem] text-muted" aria-label="Highlights">

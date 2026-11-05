@@ -1,10 +1,6 @@
 @import "tailwindcss";
-@import "@fontsource-variable/ibm-plex-sans/wght.css";
-@import "@fontsource-variable/ibm-plex-sans/wght-italic.css";
-@import "@fontsource/instrument-serif/400.css";
-@import "@fontsource/instrument-serif/400-italic.css";
-@import "@fontsource/ibm-plex-mono/400.css";
-@import "@fontsource/ibm-plex-mono/500.css";
+@import "@fontsource-variable/geist/wght.css";
+@import "@fontsource-variable/geist-mono/wght.css";
 
 /* Dark mode is driven by a `dark` class on <html> (set before paint in Base.astro). */
 @custom-variant dark (&:where(.dark, .dark *));
@@ -35,9 +31,8 @@
 }
 
 @theme inline {
-  --font-sans: "IBM Plex Sans Variable", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono Variable", ui-monospace, SFMono-Regular, Menlo, monospace;
 
   --color-paper: var(--paper);
   --color-paper-2: var(--paper-2);
