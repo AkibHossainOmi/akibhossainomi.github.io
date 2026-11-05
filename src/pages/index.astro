@@ -2,6 +2,7 @@
 import Base from "../layouts/Base.astro";
 import Section from "../components/Section.astro";
 import FeaturedProject from "../components/FeaturedProject.astro";
+import NameSort from "../components/NameSort.astro";
 import { site } from "../data/site";
 import { featuredProjects, otherProjects } from "../data/projects";
 
@@ -16,8 +17,8 @@ const facts = [
 <Base>
   <!-- Intro -->
   <div class="mx-auto max-w-6xl px-5 pb-16 pt-12 sm:px-8 sm:pt-20 md:pb-24">
-    <div class="grid gap-12 md:grid-cols-12 md:gap-10">
-      <div class="md:col-span-8">
+    <div class="grid gap-12 md:grid-cols-12 md:items-start md:gap-12">
+      <div class="md:col-span-7">
         <p class="label">Software engineer · Narayanganj, Bangladesh</p>
         <h1 class="mt-5 font-semibold tracking-[-0.035em] text-[clamp(2.6rem,8vw,4.6rem)] leading-[0.98]">
           Md. Akib<br class="hidden sm:block" /> Hossain <span class="text-accent">Omi</span>
@@ -38,17 +39,19 @@ const facts = [
         </div>
       </div>
 
-      <aside class="md:col-span-4 md:pt-12" aria-label="At a glance">
-        <dl class="divide-y divide-line border-y border-line">
-          {facts.map((f) => (
-            <div class="grid grid-cols-[6rem_1fr] gap-3 py-3 md:grid-cols-1 md:gap-0.5">
-              <dt class="label pt-[0.2rem]">{f.k}</dt>
-              <dd class="text-[0.98rem]">{f.v}</dd>
-            </div>
-          ))}
-        </dl>
-      </aside>
+      <div class="md:col-span-5 md:pt-10">
+        <NameSort />
+      </div>
     </div>
+
+    <dl class="mt-14 grid border-b border-line sm:grid-cols-2 lg:grid-cols-4" aria-label="At a glance">
+      {facts.map((f) => (
+        <div class="grid grid-cols-[6rem_1fr] gap-3 border-t border-line py-3 sm:block sm:py-4 sm:pr-4 lg:border-l lg:pl-4 lg:first:border-l-0 lg:first:pl-0">
+          <dt class="label pt-[0.2rem]">{f.k}</dt>
+          <dd class="text-[0.98rem] sm:mt-1">{f.v}</dd>
+        </div>
+      ))}
+    </dl>
   </div>
 
   <!-- Work -->
