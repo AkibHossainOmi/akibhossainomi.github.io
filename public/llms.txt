@@ -2,7 +2,7 @@
 
 > Software engineer at Telcobright and co-founder of Intech Solution (https://intechsolution.bd), based in Narayanganj, Bangladesh. Builds billing systems, web platforms and QuickSell, an AI-assisted sales inbox for online shops.
 
-- Name: Md. Akib Hossain Omi (also written Akib Hossain Omi, Akib Omi)
+- Name: Md. Akib Hossain Omi
 - Role: Software Engineer at Telcobright (since July 2023); Co-founder of Intech Solution
 - Education: B.Sc. in Computer Science and Engineering, Daffodil Institute of IT (2020–2025)
 - Location: Narayanganj, Bangladesh

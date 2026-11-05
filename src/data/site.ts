@@ -1,7 +1,6 @@
 export const site = {
   url: "https://akibhossainomi.github.io",
   name: "Md. Akib Hossain Omi",
-  shortName: "Akib Hossain Omi",
   title: "Md. Akib Hossain Omi | Software Engineer",
   role: "Software Engineer",
   description:
