@@ -15,7 +15,7 @@
 - [Home](https://akibhossainomi.github.io/): overview and selected work
 - [About](https://akibhossainomi.github.io/about): background, experience, skills, contests and open source
 - [Projects](https://akibhossainomi.github.io/projects): all projects with descriptions and links
-- [Résumé](https://akibhossainomi.github.io/resume): full résumé as HTML, plus [PDF](https://akibhossainomi.github.io/AkibHossainOmi.pdf)
+- [Resume](https://akibhossainomi.github.io/resume): full resume as HTML, plus [PDF](https://akibhossainomi.github.io/AkibHossainOmi.pdf)
 
 ## Products
 
