@@ -1,9 +1,9 @@
 ---
 import Base from "../layouts/Base.astro";
 import Section from "../components/Section.astro";
-import ProjectCard from "../components/ProjectCard.astro";
+import FeaturedProject from "../components/FeaturedProject.astro";
 import { site } from "../data/site";
-import { projects } from "../data/projects";
+import { featuredProjects, otherProjects } from "../data/projects";
 
 const facts = [
   { k: "Now", v: "Software Engineer at Telcobright" },
@@ -25,7 +25,7 @@ const facts = [
         <p class="mt-7 max-w-[38rem] text-[1.15rem] leading-relaxed text-ink-2 sm:text-xl">
           I build software that has to keep running. At <span class="text-ink">Telcobright</span> that's a billing system
           working through more than ten million SMS records a day. At <span class="text-ink">Intech Solution</span>, which I
-          co-founded, it's <a href="https://quicksell.intechsolution.bd" target="_blank" rel="noopener" class="link text-ink">QuickSell</a>: an inbox and AI assistant that
+          co-founded, it's <a href="/projects#quicksell" class="link text-ink">QuickSell</a>: an inbox and AI assistant that
           helps Bangladeshi shops sell over Messenger, Instagram and WhatsApp.
         </p>
         <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
@@ -52,11 +52,23 @@ const facts = [
   </div>
 
   <!-- Work -->
-  <Section id="work" label="Selected work" title="Projects">
-    <div class="grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
-      {projects.slice(0, 3).map((p) => <ProjectCard project={p} />)}
+  <Section id="work" label="Selected work" title="Products in production">
+    <div class="space-y-20 md:space-y-28">
+      {featuredProjects.map((p, i) => <FeaturedProject project={p} index={i} eager={i === 0} />)}
     </div>
-    <a href="/projects" class="mt-10 inline-block font-mono text-sm text-accent hover:underline">All projects →</a>
+
+    <div class="mt-20 rounded-md border border-line p-5 sm:p-7">
+      <p class="label">Earlier projects</p>
+      <ul class="mt-4 grid gap-x-8 gap-y-3 sm:grid-cols-2">
+        {otherProjects.map((p) => (
+          <li class="flex flex-col">
+            <a href={`/projects#${p.slug}`} class="link w-fit font-medium">{p.title}</a>
+            <span class="text-[0.95rem] text-ink-2">{p.summary}</span>
+          </li>
+        ))}
+      </ul>
+      <a href="/projects" class="mt-6 inline-block font-mono text-sm text-accent hover:underline">All projects →</a>
+    </div>
   </Section>
 
   <!-- Background -->
