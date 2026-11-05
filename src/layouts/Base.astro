@@ -17,7 +17,9 @@ interface Props {
 
 const { title, description = site.description, noindex = false } = Astro.props;
 const pageTitle = title ? `${title} | ${site.name}` : site.title;
-const path = Astro.url.pathname.replace(/\.html$/, "").replace(/\/$/, "") || "/";
+// Pages are built as files (index.html, about.html), so normalise to the
+// public URL: "/index.html" -> "/", "/about.html" -> "/about".
+const path = Astro.url.pathname.replace(/(\/index)?\.html$/, "").replace(/\/$/, "") || "/";
 ---
 
 <!doctype html>
