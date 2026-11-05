@@ -1,0 +1,85 @@
+---
+import Base from "../layouts/Base.astro";
+import Section from "../components/Section.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { site } from "../data/site";
+import { projects } from "../data/projects";
+
+const facts = [
+  { k: "Now", v: "Software Engineer at Telcobright" },
+  { k: "Building", v: "QuickSell, at Intech Solution (co-founder)" },
+  { k: "Studied", v: "B.Sc. in CSE, Daffodil Institute of IT" },
+  { k: "Competed", v: "Code Samurai 2024: 1st in the preliminary round" },
+];
+---
+
+<Base>
+  <!-- Intro -->
+  <div class="mx-auto max-w-5xl px-5 pb-16 pt-12 sm:px-8 sm:pt-20 md:pb-24">
+    <div class="grid gap-12 md:grid-cols-12 md:gap-10">
+      <div class="md:col-span-8">
+        <p class="label">Software engineer · Narayanganj, Bangladesh</p>
+        <h1 class="mt-5 font-serif text-[clamp(2.9rem,9vw,5.6rem)] leading-[0.95] tracking-[-0.01em]">
+          Md. Akib<br class="hidden sm:block" /> Hossain <em class="text-accent">Omi</em>
+        </h1>
+        <p class="mt-7 max-w-[38rem] text-[1.15rem] leading-relaxed text-ink-2 sm:text-xl">
+          I build software that has to keep running. At <span class="text-ink">Telcobright</span> that's a billing system
+          working through more than ten million SMS records a day. At <span class="text-ink">Intech Solution</span>, which I
+          co-founded, it's <a href="https://quicksell.intechsolution.bd" target="_blank" rel="noopener" class="link text-ink">QuickSell</a>: an inbox and AI assistant that
+          helps Bangladeshi shops sell over Messenger, Instagram and WhatsApp.
+        </p>
+        <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
+          <a href="#work" class="inline-flex items-center gap-2 rounded bg-ink px-4 py-2.5 text-paper transition-colors hover:bg-accent hover:text-accent-ink">
+            Selected work <span aria-hidden="true">↓</span>
+          </a>
+          <a href="/resume" class="link">Résumé</a>
+          <a href="https://github.com/AkibHossainOmi" target="_blank" rel="me noopener" class="link">GitHub ↗</a>
+          <a href={`mailto:${site.email}`} class="link">Email</a>
+        </div>
+      </div>
+
+      <aside class="md:col-span-4 md:pt-12" aria-label="At a glance">
+        <dl class="divide-y divide-line border-y border-line">
+          {facts.map((f) => (
+            <div class="grid grid-cols-[6rem_1fr] gap-3 py-3 md:grid-cols-1 md:gap-0.5">
+              <dt class="label pt-[0.2rem]">{f.k}</dt>
+              <dd class="text-[0.98rem]">{f.v}</dd>
+            </div>
+          ))}
+        </dl>
+      </aside>
+    </div>
+  </div>
+
+  <!-- Work -->
+  <Section id="work" label="Selected work" title="Projects">
+    <div class="grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+      {projects.slice(0, 3).map((p) => <ProjectCard project={p} />)}
+    </div>
+    <a href="/projects" class="mt-10 inline-block font-mono text-sm text-accent hover:underline">All projects →</a>
+  </Section>
+
+  <!-- Background -->
+  <Section id="background" label="Background" title="Started with contests, stayed for the systems" class="mt-24">
+    <div class="grid gap-10 md:grid-cols-12">
+      <div class="prose-body max-w-[38rem] text-ink-2 md:col-span-7">
+        <p>
+          I got into programming through competitive programming, writing C and C++ against the clock. It taught me
+          to read a problem carefully and care about edge cases, which turns out to matter even more once real money and
+          real customers are involved.
+        </p>
+        <p>
+          Today I work mostly in JavaScript, TypeScript and Python on the web, with C# and Java when a job calls for it.
+          Outside the day job I like the layers underneath: message queues with Kafka, real-time media with WebRTC, and
+          reading packets in Wireshark.
+        </p>
+      </div>
+      <div class="md:col-span-5">
+        <a href="/about" class="group block rounded-md bg-paper-2 p-5 transition-colors hover:bg-ink hover:text-paper">
+          <span class="label group-hover:text-paper/70">More</span>
+          <span class="mt-2 block font-serif text-2xl">Experience, skills and what I'm learning →</span>
+        </a>
+      </div>
+    </div>
+  </Section>
+</Base>

@@ -1,0 +1,89 @@
+@import "tailwindcss";
+@import "@fontsource-variable/ibm-plex-sans/wght.css";
+@import "@fontsource-variable/ibm-plex-sans/wght-italic.css";
+@import "@fontsource/instrument-serif/400.css";
+@import "@fontsource/instrument-serif/400-italic.css";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/500.css";
+
+/* Dark mode is driven by a `dark` class on <html> (set before paint in Base.astro). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Colour tokens: warm paper + ink, one accent. */
+:root {
+  --paper: #f5f1ea;
+  --paper-2: #ece6dc;
+  --ink: #1d1b18;
+  --ink-2: #4a453e;
+  --muted: #6e675d;
+  --line: #ddd5c8;
+  --accent: #b8430f;
+  --accent-ink: #fff8f1;
+  color-scheme: light;
+}
+
+.dark {
+  --paper: #151412;
+  --paper-2: #1e1c19;
+  --ink: #ece6dc;
+  --ink-2: #c9c2b6;
+  --muted: #9a9286;
+  --line: #2e2b27;
+  --accent: #f08a4b;
+  --accent-ink: #1a0f08;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --font-sans: "IBM Plex Sans Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+  }
+  ::selection {
+    background: var(--accent);
+    color: var(--accent-ink);
+  }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+  }
+}
+
+@layer components {
+  /* Small uppercase mono label used for section eyebrows and metadata. */
+  .label {
+    @apply font-mono text-[0.72rem] uppercase tracking-[0.14em] text-muted;
+  }
+  /* Underlined text link with accent hover. */
+  .link {
+    @apply underline decoration-line decoration-1 underline-offset-[5px] transition-colors hover:text-accent hover:decoration-accent;
+  }
+  .prose-body p + p {
+    margin-top: 1rem;
+  }
+}
