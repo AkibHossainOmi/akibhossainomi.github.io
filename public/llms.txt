@@ -1,0 +1,43 @@
+# Md. Akib Hossain Omi
+
+> Software engineer at Telcobright and co-founder of Intech Solution (https://intechsolution.bd), based in Narayanganj, Bangladesh. Builds billing systems, web platforms and QuickSell, an AI-assisted sales inbox for online shops.
+
+- Name: Md. Akib Hossain Omi (also written Akib Hossain Omi, Akib Omi)
+- Role: Software Engineer at Telcobright (since July 2023); Co-founder of Intech Solution
+- Education: B.Sc. in Computer Science and Engineering, Daffodil Institute of IT (2020–2025)
+- Location: Narayanganj, Bangladesh
+- Contact: akibhossainomi2000@gmail.com
+- GitHub: https://github.com/AkibHossainOmi
+- LinkedIn: https://www.linkedin.com/in/mdakibhossainomi/
+
+## Pages
+
+- [Home](https://akibhossainomi.github.io/): overview and selected work
+- [About](https://akibhossainomi.github.io/about): background, experience, skills, contests and open source
+- [Projects](https://akibhossainomi.github.io/projects): all projects with descriptions and links
+- [Résumé](https://akibhossainomi.github.io/resume): full résumé as HTML, plus [PDF](https://akibhossainomi.github.io/AkibHossainOmi.pdf)
+
+## Products
+
+- [QuickSell](https://quicksell.intechsolution.bd): one inbox for Messenger, Instagram, WhatsApp and website chat for shops in Bangladesh. AI answers customers in Bangla, English or Banglish, captures orders from the conversation, and books delivery with Pathao or Steadfast. Built by Intech Solution, which Akib co-founded.
+- [Distressed Pro Data](https://distressedprodata.com): marketplace of human-verified, monthly-refreshed tax-delinquent property leads for US real-estate investors, browsed by state and county.
+
+## Earlier projects
+
+- [ResultSync](https://github.com/AkibHossainOmi/ResultSync): student result management (React, Node.js, Express, MySQL)
+- [EcoSync](https://github.com/AkibHossainOmi/cs24-p2-DIIT_RUNTIME_TERROR): waste collection planning for Dhaka North City Corporation, built for Code Samurai 2024
+- [Health](https://github.com/Balagha/health): open-source healthcare web app
+- [FamilyCart](https://github.com/AkibHossainOmi/familycart): Android app for shared family shopping and spending
+- [FontForger](https://github.com/AkibHossainOmi/FontForger): Chrome extension to change text case with a shortcut
+
+## Experience highlights
+
+- Telcobright: maintains and extends a billing system processing 10M+ SMS records per day; builds REST APIs for billing and reporting.
+- DIIT Programming Club: President (Aug 2023 – Jul 2024).
+- Code Samurai 2024: 1st place in the preliminary round among 400+ teams.
+- ICPC Asia Dhaka Regional 2022: ranked 105th.
+- Open source: contributed voice-recognition language switching to MiroTalk SFU.
+
+## Skills
+
+C, C++, C#, Java, Python, JavaScript, TypeScript, React, Node.js, Express, Django, Tailwind CSS, MySQL, PostgreSQL, MongoDB, Redis, Firebase, Docker, Git, Kafka, WebRTC, Wireshark.
