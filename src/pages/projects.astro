@@ -1,10 +1,12 @@
 ---
 import Base from "../layouts/Base.astro";
+import Section from "../components/Section.astro";
+import FeaturedProject from "../components/FeaturedProject.astro";
 import ProjectCard from "../components/ProjectCard.astro";
-import { projects } from "../data/projects";
+import { featuredProjects, otherProjects } from "../data/projects";
 
 const description =
-  "Projects by Md. Akib Hossain Omi, including ResultSync, EcoSync, Health, FamilyCart and FontForger.";
+  "Projects by Md. Akib Hossain Omi, including QuickSell, an AI sales inbox for Facebook, Instagram and WhatsApp shops, Distressed Pro Data, ResultSync and EcoSync.";
 ---
 
 <Base title="Projects" description={description}>
@@ -14,13 +16,20 @@ const description =
       Things I've built and shipped
     </h1>
     <p class="mt-6 max-w-2xl text-lg text-ink-2">
-      Work from university, hackathons and side projects. The source for each is on GitHub.
+      Two products that are live with real customers, followed by earlier work from university, hackathons and side projects.
+      The live products are closed source; the rest are on GitHub.
     </p>
   </div>
 
-  <section class="mx-auto max-w-5xl px-5 sm:px-8" aria-label="Projects">
-    <div class="grid gap-x-8 gap-y-14 border-t border-ink pt-10 sm:grid-cols-2 lg:grid-cols-3">
-      {projects.map((p) => <ProjectCard project={p} />)}
+  <Section id="live" label="In production">
+    <div class="space-y-20 md:space-y-28">
+      {featuredProjects.map((p, i) => <FeaturedProject project={p} index={i} eager={i === 0} headingLevel="h2" />)}
     </div>
-  </section>
+  </Section>
+
+  <Section id="earlier" label="Earlier work" class="mt-24">
+    <div class="grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+      {otherProjects.map((p) => <ProjectCard project={p} />)}
+    </div>
+  </Section>
 </Base>

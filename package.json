@@ -10,6 +10,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
+    "screenshots": "node scripts/screenshots.mjs",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist -t"
   },

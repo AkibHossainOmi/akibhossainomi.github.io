@@ -1,4 +1,6 @@
 import type { ImageMetadata } from "astro";
+import quicksell from "../assets/projects/quicksell.png";
+import distressedprodata from "../assets/projects/distressedprodata.png";
 import resultSync from "../assets/projects/ResultSync.jpeg";
 import ecoSync from "../assets/projects/EcoSync.jpg";
 import health from "../assets/projects/health.jpg";
@@ -18,10 +20,37 @@ export type Project = {
   live?: string;
   /** Public source code. Omitted for closed-source products. */
   source?: string;
+  role?: string;
   context?: string;
+  featured?: boolean;
 };
 
 export const projects: Project[] = [
+  {
+    slug: "quicksell",
+    title: "QuickSell",
+    summary: "One inbox and an AI sales assistant for shops that sell through chat.",
+    description:
+      "Most online shops in Bangladesh sell through Messenger, Instagram and WhatsApp, not a storefront. QuickSell pulls those conversations and website chat into one inbox. Its AI answers product and price questions in Bangla, English or Banglish, writes up the order from the chat with stock, totals and delivery charge, and books it with Pathao or Steadfast in one click. It also has post and ad tools, sales insights, and a developer API with webhooks.",
+    image: quicksell,
+    imageAlt: "QuickSell landing page with the headline 'Sell where your customers actually chat' and a preview of the unified inbox",
+    tags: ["AI auto-reply", "Messenger · Instagram · WhatsApp", "Courier integration", "Public API & webhooks", "Bangla + English"],
+    live: "https://quicksell.intechsolution.bd",
+    role: "Co-founder, Intech Solution",
+    featured: true,
+  },
+  {
+    slug: "distressed-pro-data",
+    title: "Distressed Pro Data",
+    summary: "A marketplace for verified tax-delinquent property leads in the US.",
+    description:
+      "A lead platform for real-estate investors. Users pick a state on an interactive US map, drill into counties and buy lists of owners with at least two years of unpaid property tax and $5,000+ owed. Records are reviewed by people and refreshed monthly, and pricing is pay-as-you-go instead of a locked subscription.",
+    image: distressedprodata,
+    imageAlt: "Distressed Pro Data home page with an interactive map of US states for browsing property leads",
+    tags: ["Interactive US map", "Lead marketplace", "Usage-based billing", "Monthly data refresh"],
+    live: "https://distressedprodata.com",
+    featured: true,
+  },
   {
     slug: "resultsync",
     title: "ResultSync",
@@ -79,3 +108,6 @@ export const projects: Project[] = [
     source: "https://github.com/AkibHossainOmi/FontForger",
   },
 ];
+
+export const featuredProjects = projects.filter((p) => p.featured);
+export const otherProjects = projects.filter((p) => !p.featured);
