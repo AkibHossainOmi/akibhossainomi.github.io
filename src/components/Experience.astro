@@ -1,0 +1,21 @@
+---
+import { experience } from "../data/profile";
+---
+
+<ol class="divide-y divide-line">
+  {experience.map((job) => (
+    <li class="grid gap-1 py-5 first:pt-0 sm:grid-cols-[11rem_1fr] sm:gap-8">
+      <p class="font-mono text-[0.8rem] text-muted sm:pt-1">{job.period}</p>
+      <div>
+        <h3 class="text-lg font-medium">
+          {job.role} <span class="text-muted">at</span> {job.org}
+        </h3>
+        <ul class="mt-2 space-y-1.5 text-ink-2">
+          {job.points.map((pt) => (
+            <li class="relative pl-5 before:absolute before:left-0 before:top-[0.8em] before:h-px before:w-2.5 before:bg-accent">{pt}</li>
+          ))}
+        </ul>
+      </div>
+    </li>
+  ))}
+</ol>
